@@ -8,7 +8,7 @@ import { Container } from "./container";
 
 export const LandingImages = () => {
   return (
-    <div className="relative min-h-140 w-full  perspective-distant  pt-20">
+    <div className="relative min-h-140 w-full  perspective-distant  pt-20 pr-10 sm:pr-20">
       <motion.div
         initial={{
           opacity: 0,
@@ -28,8 +28,8 @@ export const LandingImages = () => {
         <Image
           src="/hero-dash1.png"
           alt="hero dashboard"
-          height={1080}
-          width={1920}
+          height={900}
+          width={1720}
           className={cn(
             "absolute inset-0 rounded mask-r-from-40% mask-b-from-40% shadow-2xl"
           )}
@@ -57,8 +57,8 @@ export const LandingImages = () => {
         <Image
           src="/hero-dash.png"
           alt="hero dashboard"
-          height={1080}
-          width={1920}
+          height={900}
+          width={1700}
           className={cn(
             "absolute inset-0 rounded mask-r-from-40% mask-b-from-40% shadow-2xl"
           )}

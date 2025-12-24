@@ -15,7 +15,7 @@ const NavLinks = [
 
 export const Navbar = () => {
   return (
-    <div className="border-b border-neutral-200 dark:border-neutral-800">
+    <div className="border-b border-neutral-200 dark:border-neutral-800 ">
       <DesktopNavbar />
       <MobileNavbar />
     </div>
@@ -25,7 +25,7 @@ export const Navbar = () => {
 export const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex md:hidden px-4 py-2 justify-between relative">
+    <div className="flex md:hidden px-4  py-2 justify-between relative">
       <LogoIcon />
       <button onClick={() => setOpen(!open)}>
         <IconLayoutSidebar className="size-4" />
@@ -37,7 +37,12 @@ export const MobileNavbar = () => {
             initial={{
               opacity: 0,
             }}
-            className="fixed inset-0 h-full w-full bg-white"
+            animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{
+              duration: 0.2,
+            }}
+            className="fixed inset-0 h-full w-full  z-50"
           >
             <button
               onClick={() => setOpen(false)}
