@@ -37,19 +37,51 @@ export const MobileNavbar = () => {
             initial={{
               opacity: 0,
             }}
-            animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(15px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{
               duration: 0.2,
             }}
-            className="fixed inset-0 h-full w-full  z-50"
+            className="fixed inset-0 h-full w-full px-4 py-2 z-50"
           >
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute right-2 top-2"
-            >
-              <IconX />
-            </button>
+            <div className="flex justify-between">
+              <LogoIcon />
+              <button onClick={() => setOpen(false)}>
+                <IconX />
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-6 my-10">
+              {NavLinks.map((item, index) => (
+                <motion.div
+                  initial={{ opacity: 0, x: -4 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: index * 0.1 }}
+                  key={index + item.title}
+                >
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="text-2xl text-neutral-600 dark:text-neutral-400 font-medium"
+                  >
+                    {item.title}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/login"
+                className="text-sm text-neutral-600 dark:text-neutral-400 font-medium"
+              >
+                login
+              </Link>
+              <Button>
+                <Link href="/signup" className="text-sm  font-medium">
+                  signup
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
