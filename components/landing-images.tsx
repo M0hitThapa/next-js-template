@@ -10,7 +10,7 @@ export const LandingImages = () => {
   return (
     <div className="relative">
       <div className="absolute inset-0 h-full w-full mask-t-from-10% bg-white z-50"></div>
-      <div className="relative min-h-142 sm:min-h-150 md:min-h-170 lg:min-h-210 w-full  perspective-distant  pt-20 pr-10 sm:pr-28 md:pr-30 translate-x-25">
+      <div className="relative min-h-142 sm:min-h-150 md:min-h-170 lg:min-h-210 w-full  perspective-distant  pt-10 pr-10 sm:pr-28 md:pr-30 translate-x-25">
         <motion.div
           initial={{
             opacity: 0,
@@ -43,7 +43,7 @@ export const LandingImages = () => {
         <motion.div
           initial={{
             opacity: 0,
-            y: -200,
+            y: -100,
           }}
           animate={{
             opacity: 1,
